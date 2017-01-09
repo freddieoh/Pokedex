@@ -64,7 +64,6 @@
 				1FEC71661E1EEA1300FA5004 /* Views */,
 				1FEC71651E1EE9FE00FA5004 /* Controllers */,
 				1FC397631E1EDC510068AE6E /* AppDelegate.swift */,
-				1FC397651E1EDC510068AE6E /* ViewController.swift */,
 				1FC397671E1EDC510068AE6E /* Main.storyboard */,
 				1FC3976A1E1EDC510068AE6E /* Assets.xcassets */,
 				1FEC71631E1EE72F00FA5004 /* pokemon.csv */,
@@ -77,6 +76,7 @@
 		1FEC71651E1EE9FE00FA5004 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1FC397651E1EDC510068AE6E /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
