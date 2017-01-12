@@ -55,7 +55,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       
       
       for row in rows {
-        // Force unwrapping because data is in csv.swift file
+//         Force unwrapping because data is in csv.swift file
         
         let pokeId = Int(row["id"]!)!
         let name = row["identifier"]!
