@@ -26,6 +26,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     collectionView.dataSource = self
     collectionView.delegate = self
     searchBar.delegate = self
+    searchBar.returnKeyType = .done
     
     parsePokemonCSV()
     initAudio()
@@ -37,12 +38,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
     
     do {
-      
       musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
       musicPlayer?.prepareToPlay()
       musicPlayer?.numberOfLoops = -1
       musicPlayer?.play()
-      
     } catch let error as NSError {
       
       print(error.debugDescription)
@@ -56,7 +55,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     do {
       let csv = try CSV(contentsOfURL: path)
       let rows = csv.rows
-      
       
       for row in rows {
 //         Force unwrapping because data is in csv.swift file
@@ -83,35 +81,40 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       let poke: Pokemon!
       
       if inSearchMode {
-        
         poke = filteredPokemon[indexPath.row]
         cell.configureCell(poke)
-     
       } else {
-        
         poke = pokemon[indexPath.row]
         cell.configureCell(poke)
       }
-      
       cell.configureCell(poke)
       
       return cell
     }
     else {
-      
       return UICollectionViewCell()
     }
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+  
+    var poke: Pokemon?
+    
+    if inSearchMode {
+      poke = filteredPokemon[indexPath.row]
+    } else {
+      poke = pokemon[indexPath.row]
+    }
+   
+    performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
+  
   }
+ 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     
     if inSearchMode {
-      
       return filteredPokemon.count
     }
-    
     return pokemon.count
   }
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -121,19 +124,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   @IBAction func musicButtonPressed(_ sender: UIButton) {
     
     if musicPlayer.isPlaying {
-      
       musicPlayer?.pause()
       sender.alpha = 0.2
-    }
-    
-    else {
-      
+    }  else {
       musicPlayer?.play()
       sender.alpha = 1.0
     }
-    
   }
-  
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -141,22 +138,26 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: 104, height: 104)
   }
-  
-  
-  
+
 }
 // MARK: UISearchBarDelegate
 extension ViewController: UISearchBarDelegate {
+// Edit search button for soft keyboard
+  
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    defer { collectionView.reloadData() }
+    defer {collectionView.reloadData()}
     
     inSearchMode = !searchText.isEmpty
     guard inSearchMode else { return }
     
     let lower = searchText.lowercased()
     filteredPokemon = pokemon.filter { $0.name.range(of: lower) != nil }
- 
+
   }
   
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    view.endEditing(true)
+  }
+
 }
