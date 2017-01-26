@@ -57,7 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       let rows = csv.rows
       
       for row in rows {
-//         Force unwrapping because data is in csv.swift file
+//Force unwrapping because data is in csv.swift file
         
         let pokeId = Int(row["id"]!)!
         let name = row["identifier"]!
@@ -149,7 +149,7 @@ extension ViewController: UISearchBarDelegate {
     defer {collectionView.reloadData()}
     
     inSearchMode = !searchText.isEmpty
-    guard inSearchMode else { return }
+    guard inSearchMode else { view.endEditing(true); return }
     
     let lower = searchText.lowercased()
     filteredPokemon = pokemon.filter { $0.name.range(of: lower) != nil }
