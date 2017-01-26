@@ -121,6 +121,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     return 1
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "PokemonDetailVC" {
+      if let detailsVC = segue.destination as? PokemonDetailViewController {
+        if let poke = sender as? Pokemon {
+          detailsVC.pokemon = poke
+        }
+      }
+    }
+  }
+  
   @IBAction func musicButtonPressed(_ sender: UIButton) {
     
     if musicPlayer.isPlaying {
@@ -132,6 +142,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
   }
 }
+
+
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension ViewController: UICollectionViewDelegateFlowLayout {

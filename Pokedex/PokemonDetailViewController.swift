@@ -11,12 +11,29 @@ import UIKit
 class PokemonDetailViewController: UIViewController {
 
   var pokemon: Pokemon?
+  @IBOutlet weak var pokemonNameLabel: UILabel!
   
-    override func viewDidLoad() {
+
+  @IBOutlet weak var pokemonDescriptionLabel: UILabel!
+  @IBOutlet weak var pokemonHeightLabel: UILabel!
+  @IBOutlet weak var pokemonWeightLabel: UILabel!
+  @IBOutlet weak var pokemonDefenseLabel: UILabel!
+  @IBOutlet weak var pokedexIdLabel: UILabel!
+  @IBOutlet weak var pokemonAttackLabel: UILabel!
+  @IBOutlet weak var currentEvolutionImageView: UIImageView!
+  @IBOutlet weak var nextEvolutionImageView: UIImageView!
+  @IBOutlet weak var evolutionLabel: UILabel!
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
-    
+    pokemonNameLabel.text = pokemon?.name
+  
   }
 
+  @IBAction func backButtonPressed(_ sender: UIButton) {
+    
+    dismiss(animated: true, completion: nil)
+  }
   /*
     // MARK: - Navigation
 
