@@ -156,7 +156,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UISearchBarDelegate {
 // Edit search button for soft keyboard
   
-  
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     defer {collectionView.reloadData()}
     
