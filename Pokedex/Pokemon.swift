@@ -87,6 +87,10 @@ class Pokemon {
     self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
   }
   
+//  func test() {
+//    
+//  }
+  
   func downloadPokemonDetail(completed: @escaping DownloadComplete) {
     
     Alamofire.request(_pokemonURL).responseJSON { (response) in
