@@ -57,21 +57,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       let rows = csv.rows
       
       for row in rows {
-//Force unwrapping because data is in csv.swift file
-        
         let pokeId = Int(row["id"]!)!
         let name = row["identifier"]!
-        
         let poke = Pokemon(name: name, pokedexId: pokeId)
         pokemon.append(poke)
-        
       }
       
     } catch let error as NSError {
       
       print(error.debugDescription)
     }
-    
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -143,8 +138,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
 }
 
-
-
 // MARK: UICollectionViewDelegateFlowLayout
 extension ViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -153,8 +146,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 }
 // MARK: UISearchBarDelegate
+
 extension ViewController: UISearchBarDelegate {
-// Edit search button for soft keyboard
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     defer {collectionView.reloadData()}
@@ -170,5 +163,4 @@ extension ViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     view.endEditing(true)
   }
-
 }
