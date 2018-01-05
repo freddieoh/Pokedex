@@ -34,9 +34,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func initAudio() {
-    
     let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
-    
     do {
       musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
       musicPlayer?.prepareToPlay()
@@ -49,7 +47,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func parsePokemonCSV() {
-    
     let path = Bundle.main.path(forResource: "pokemon", ofType: "csv")!
     
     do {
@@ -92,7 +89,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-  
     var poke: Pokemon?
     
     if inSearchMode {
@@ -100,7 +96,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     } else {
       poke = pokemon[indexPath.row]
     }
-   
     performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
   
   }
@@ -127,7 +122,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   @IBAction func musicButtonPressed(_ sender: UIButton) {
-    
     if musicPlayer.isPlaying {
       musicPlayer?.pause()
       sender.alpha = 0.2

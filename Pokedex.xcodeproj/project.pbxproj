@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		1F0FF54B1E2892930089EDFD /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0FF54A1E2892930089EDFD /* PokemonDetailViewController.swift */; };
-
-		1F02424A1E3A6E4D00650548 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1F0242491E3A6E4D00650548 /* music.mp3 */; };
 		1F452A781E20255F00F119B6 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F452A771E20255F00F119B6 /* PokeCell.swift */; };
 		1F6738FB1E26BC9B007BFE18 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6738FA1E26BC9B007BFE18 /* csv.swift */; };
 		1F6738FD1E26C24A007BFE18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F6738FC1E26C24A007BFE18 /* Assets.xcassets */; };
@@ -28,9 +25,8 @@
 
 /* Begin PBXFileReference section */
 		0352F3B6276411ABBF9F505B /* Pods_Pokedex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pokedex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F02424B1E3A6E5200650548 /* solidpokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = solidpokemon.ttf; path = ../solidpokemon.ttf; sourceTree = "<group>"; };
 		1F0FF54A1E2892930089EDFD /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
-		1F0242491E3A6E4D00650548 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
-		1F02424B1E3A6E5200650548 /* solidpokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = solidpokemon.ttf; sourceTree = "<group>"; };
 		1F452A771E20255F00F119B6 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 		1F6738FA1E26BC9B007BFE18 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
 		1F6738FC1E26C24A007BFE18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,7 +34,7 @@
 		1FB8C4D31E26E7E100AB2A7B /* solidpokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = solidpokemon.ttf; sourceTree = "<group>"; };
 		1FB8C4DB1E27125400AB2A7B /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		1FC397601E1EDC510068AE6E /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FC397631E1EDC510068AE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Pokedex/AppDelegate.swift; sourceTree = "<group>"; };
+		1FC397631E1EDC510068AE6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC397651E1EDC510068AE6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FC397681E1EDC510068AE6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FC3976D1E1EDC510068AE6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,7 +68,9 @@
 		1FB8C4D71E26E8FA00AB2A7B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FC397631E1EDC510068AE6E /* AppDelegate.swift */,
 				1FB8C4DB1E27125400AB2A7B /* music.mp3 */,
+				1F02424B1E3A6E5200650548 /* solidpokemon.ttf */,
 				1FC3976F1E1EDC510068AE6E /* Info.plist */,
 				1F6738FA1E26BC9B007BFE18 /* csv.swift */,
 				1FEC71631E1EE72F00FA5004 /* pokemon.csv */,
@@ -95,14 +93,11 @@
 		1FC397571E1EDC510068AE6E = {
 			isa = PBXGroup;
 			children = (
-				1FC397631E1EDC510068AE6E /* AppDelegate.swift */,
 				1FC397621E1EDC510068AE6E /* Pokedex */,
 				1FC397611E1EDC510068AE6E /* Products */,
 				1FB8C4D71E26E8FA00AB2A7B /* Supporting Files */,
 				58E6A80FA92338F6C8AB0C75 /* Pods */,
 				37BE30C8B8ED9132ED83E3FF /* Frameworks */,
-				1F0242491E3A6E4D00650548 /* music.mp3 */,
-				1F02424B1E3A6E5200650548 /* solidpokemon.ttf */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = geeoku;
 				TargetAttributes = {
 					1FC3975F1E1EDC510068AE6E = {
@@ -233,7 +228,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F02424A1E3A6E4D00650548 /* music.mp3 in Resources */,
 				1FC3976E1E1EDC510068AE6E /* LaunchScreen.storyboard in Resources */,
 				1FEC71641E1EE72F00FA5004 /* pokemon.csv in Resources */,
 				1FB8C4D51E26E7E100AB2A7B /* solidpokemon.ttf in Resources */,
@@ -341,7 +335,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -349,7 +345,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -390,7 +390,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -398,7 +400,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -15,16 +15,17 @@ class PokeCell: UICollectionViewCell {
   
   var pokemon: Pokemon!
   
-  // Rounded collectionView cells
+  fileprivate func roundCornersForCell() {
+    layer.cornerRadius = 5.0
+  }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    layer.cornerRadius = 5.0
+    roundCornersForCell()
   }
   
   func configureCell(_ pokemon: Pokemon) {
-    
     self.pokemon = pokemon
     nameLabel.text = self.pokemon.name.capitalized
     thumbImage.image = UIImage(named: "\(pokemon.pokedexId)")

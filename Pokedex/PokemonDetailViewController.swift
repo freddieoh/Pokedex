@@ -36,17 +36,13 @@ class PokemonDetailViewController: UIViewController {
   }
   
   func updateUI() {
-    
     pokemonAttackLabel.text = pokemon?.attack
     pokemonDefenseLabel.text = pokemon?.defense
     pokemonHeightLabel.text = pokemon?.height
     pokemonWeightLabel.text = pokemon?.weight
-    
   }
 
   @IBAction func backButtonPressed(_ sender: UIButton) {
-    
     dismiss(animated: true, completion: nil)
   }
-
 }
